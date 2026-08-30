@@ -2450,3 +2450,33 @@ body.modal-open {
     }
 
 }
+
+/* =========================================================
+   19. MOBILE READABILITY FIX
+========================================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        font-size: 17px;
+    }
+
+    p, .service-card-content p, .contact-content p,
+    .about-content p, .approach-item p {
+        font-size: 16px !important;
+        line-height: 1.6;
+    }
+
+    .footer-col a, .footer-disclaimer p, .consent-block p {
+        font-size: 14px !important;
+    }
+
+    .contact-fee, .modal-price-note {
+        font-size: 15px !important;
+    }
+
+    label {
+        font-size: 15px !important;
+    }
+
+}
