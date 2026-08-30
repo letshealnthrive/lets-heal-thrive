@@ -557,9 +557,9 @@ document.addEventListener('DOMContentLoaded', function () {
 const servicePricing = {
     "Individual Therapy": { full: 1500, discounted: 750 },
     "Family Counselling": { full: 2400, discounted: 1200 },
-    "Child Therapy": { full: 1800, discounted: 900 },
-    "CBT-Focused Therapy": { full: 1800, discounted: 900 },
-    "Behavioral Therapy": { full: 1800, discounted: 900 },
+    "Child Therapy": { full: 1500, discounted: 750 },
+    "CBT-Focused Therapy": { full: 1500, discounted: 750 },
+    "Behavioral Therapy": { full: 1500, discounted: 750 },
     "Relationship Counselling": { full: 2400, discounted: 1200 },
     "Other": { full: 1500, discounted: 750 }
 };
