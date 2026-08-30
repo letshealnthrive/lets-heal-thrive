@@ -550,3 +550,32 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+
+
+
+// Dynamic pricing based on consultation type
+const servicePricing = {
+    "Individual Therapy": { full: 1500, discounted: 750 },
+    "Family Counselling": { full: 2400, discounted: 1200 },
+    "Child Therapy": { full: 1800, discounted: 900 },
+    "CBT-Focused Therapy": { full: 1800, discounted: 900 },
+    "Behavioral Therapy": { full: 1800, discounted: 900 },
+    "Relationship Counselling": { full: 2400, discounted: 1200 },
+    "Other": { full: 1500, discounted: 750 }
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+    const typeSelect = document.getElementById("bkType");
+    const priceStrike = document.getElementById("priceStrike");
+    const priceNow = document.getElementById("priceNow");
+
+    if (typeSelect && priceStrike && priceNow) {
+        typeSelect.addEventListener("change", function () {
+            const selected = servicePricing[this.value];
+            if (selected) {
+                priceStrike.textContent = "₹" + selected.full.toLocaleString("en-IN");
+                priceNow.textContent = "₹" + selected.discounted.toLocaleString("en-IN");
+            }
+        });
+    }
+});
