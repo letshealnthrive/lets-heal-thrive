@@ -2480,3 +2480,35 @@ body.modal-open {
     }
 
 }
+
+@media (max-width: 768px) {
+
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+        font-size: 16px !important;
+        padding: 14px 16px !important;
+    }
+
+    .form-row input::placeholder,
+    .form-row select {
+        font-size: 16px !important;
+    }
+
+    .modal-title {
+        font-size: 26px !important;
+    }
+
+    .modal-subtitle {
+        font-size: 15px !important;
+    }
+
+    .section-heading h2, h2 {
+        font-size: 30px !important;
+    }
+
+    .btn, button {
+        font-size: 15px !important;
+    }
+
+}
