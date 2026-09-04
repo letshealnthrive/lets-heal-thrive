@@ -31,25 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    /* =====================================================
-       ANNOUNCEMENT BAR DISMISS
-    ===================================================== */
 
-    var announceBar = document.getElementById('announceBar');
-    var announceClose = document.getElementById('announceClose');
-
-    if (announceBar && announceClose) {
-        try {
-            if (sessionStorage.getItem('lht_announce_dismissed') === '1') {
-                announceBar.classList.add('is-hidden');
-            }
-        } catch (err) { /* sessionStorage unavailable — ignore */ }
-
-        announceClose.addEventListener('click', function () {
-            announceBar.classList.add('is-hidden');
-            try { sessionStorage.setItem('lht_announce_dismissed', '1'); } catch (err) {}
-        });
-    }
 
 
     var header = document.querySelector('.header');
@@ -551,31 +533,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-
-
-// Dynamic pricing based on consultation type
-const servicePricing = {
-    "Individual Therapy": { full: 1500, discounted: 750 },
-    "Family Counselling": { full: 2400, discounted: 1200 },
-    "Child Therapy": { full: 1500, discounted: 750 },
-    "CBT-Focused Therapy": { full: 1500, discounted: 750 },
-    "Behavioral Therapy": { full: 1500, discounted: 750 },
-    "Relationship Counselling": { full: 2400, discounted: 1200 },
-    "Other": { full: 1500, discounted: 750 }
-};
-
-document.addEventListener("DOMContentLoaded", function () {
-    const typeSelect = document.getElementById("bkType");
-    const priceStrike = document.getElementById("priceStrike");
-    const priceNow = document.getElementById("priceNow");
-
-    if (typeSelect && priceStrike && priceNow) {
-        typeSelect.addEventListener("change", function () {
-            const selected = servicePricing[this.value];
-            if (selected) {
-                priceStrike.textContent = "₹" + selected.full.toLocaleString("en-IN");
-                priceNow.textContent = "₹" + selected.discounted.toLocaleString("en-IN");
-            }
-        });
-    }
-});
